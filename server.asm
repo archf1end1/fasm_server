@@ -88,6 +88,12 @@ main:
 
 	write STDOUT, bind_info_msg, bind_info_msg_len
 	mov word [serveraddr.sin_family], AF_INET
+	; below in place of 34835 you can put any port number
+	; steps to follow
+	; take any port get the hex value of it
+	; reverse the value eg, 1b32 = 231b
+	; and then change change it to normal number
+	; and change the 34835 to number you got
 	mov word [serveraddr.sin_port], 34835
 	mov dword [serveraddr.sin_addr], INADDR_ANY
 	bind [sockfd], serveraddr.sin_family, sizeof_servaddr
